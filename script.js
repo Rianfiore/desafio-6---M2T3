@@ -66,7 +66,7 @@ const cadastro = [
 
 const showFriends = (ar) => {
   let varGender;
-  let varGenderPronum;
+  let varGenderPronoun;
   let varGenderArticle;
   let varGenderReference;
   let plural2;
@@ -76,7 +76,7 @@ const showFriends = (ar) => {
       ? ((varGenderPronum = "ele"),
         (varGenderArticle = "o"),
         (varGenderReference = "e"))
-      : ((varGenderPronum = "ela"),
+      : ((varGenderPronoun = "ela"),
         (varGenderArticle = varGenderReference = "a"));
 
     e.amigos.length > 1
@@ -91,10 +91,3 @@ const showFriends = (ar) => {
   });
 };
 showFriends(cadastro).map((e) => console.log(e));
-
-const isRunning = true;
-let testando = "não está testando";
-
-const verifyRunning = isRunning && ((testando = "está testando"), "é verdade,");
-
-console.log(verifyRunning, testando);
