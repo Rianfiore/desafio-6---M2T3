@@ -69,7 +69,7 @@ const showFriends = (ar) => {
   let varGenderPronum;
   let varGenderArticle;
   let varGenderReference;
-  let plural, plural2;
+  let plural2;
   return ar.map((e) => {
     varGender = e.gender;
     varGender === "m"
@@ -80,14 +80,21 @@ const showFriends = (ar) => {
         (varGenderArticle = varGenderReference = "a"));
 
     e.amigos.length > 1
-      ? ((plural = "ê"), (plural2 = "s"))
-      : ((plural = "e"), (plural2 = ""));
+      ? ((plural2 = "s"), (stateVerb = "É"))
+      : ((stateVerb = "São"), (plural2 = ""));
 
     return `Ess${varGenderReference} é ${varGenderArticle} ${
       e.nome
-    }, ${varGenderPronum} t${plural}m ${
+    }, ${varGenderPronum} tem ${
       e.amigos.length
     } amigo${plural2}. São eles: ${e.amigos.join(", ")}`;
   });
 };
 showFriends(cadastro).map((e) => console.log(e));
+
+const isRunning = true;
+let testando = "não está testando";
+
+const verifyRunning = isRunning && ((testando = "está testando"), "é verdade,");
+
+console.log(verifyRunning, testando);
